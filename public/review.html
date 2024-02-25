@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Form Data Review</title>
+    <style>
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #aeccec72;
+            border-radius: 8px;
+            position: relative;
+        }
+
+        h1 {
+            margin-left: 20px;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .form-data {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .column {
+            flex: 1;
+        }
+
+        .form-data p {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        .button-container {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+        }
+
+        button {
+            padding: 10px 20px;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .final-submit-btn {
+            margin-top: 20px;
+            color: black;
+            background-color: #28a745;
+        }
+
+        .final-submit-btn:hover {
+            color: white;
+            background-color: #218838;
+        }
+
+        .resubmit-btn {
+            margin-top: 20px;
+            margin-right: 10px;
+            background-color: #ffcf3d;
+            color: black;
+        }
+
+        .resubmit-btn:hover {
+            color: white;
+            background-color: #e0a800;
+        }
+
+/* Additional styling as needed */
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Review Form Data</h1>
+        <div class="form-data">
+            <div class="column">
+                <p><strong>Name:</strong> {name}</p>
+                <p><strong>Employee ID:</strong> {empID}</p>
+                <p><strong>Department:</strong> {dept}</p>
+                <p><strong>Date of Birth:</strong> {dob}</p>
+                <p><strong>Gender:</strong> {gender}</p>
+                <p><strong>Designation:</strong> {designation}</p>
+                <p><strong>Salary:</strong> {salary}</p>
+            </div>
+            <div class="column">
+                <p><strong>Mobile Number:</strong> {number}</p>
+                <p><strong>Address:</strong> {address}</p>
+                <p><strong>City:</strong> {city}</p>
+                <p><strong>Pincode:</strong> {pincode}</p>
+                <p><strong>Date of Joining:</strong> {doj}</p>
+                <p><strong>Office Branch:</strong> {branch}</p>
+            </div>
+        </div>
+        <div class="button-container">
+            <form action="/api/form" method="GET">
+                <button type="submit" class="resubmit-btn">Resubmit</button>
+            </form>
+
+            <form id="finalSubmitForm" action="/api/final-submit" method="POST">
+                <button type="button" class="final-submit-btn" onclick="confirmSubmission()">Final Submit</button>
+            </form>
+        </div>
+    </div>
+</body>
+<script>
+    function confirmSubmission() {
+        if(confirm("If you click on OK the form details will be updated and can't be changed again. Are you sure you want to submit the form? If yes, please click on OK.")){
+            document.getElementById("finalSubmitForm").submit();
+        }
+    }
+</script>
+</html>

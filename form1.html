@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Employee Details Form</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <section class="container">
+      <header>Registration Form</header>
+      <form action="/api/form1submission" method="POST" class="form">
+        <div class="input-box">
+          <label>Full Name</label>
+          <input type="text" id="name" name="name" placeholder="Enter full name" />
+        </div>
+
+        <div class="input-box">
+          <label>Employee ID</label>
+          <input type="text" id="empID" name="empID" placeholder="Enter employee ID" />
+        </div>
+
+        <div class="column">
+          <div class="input-box">
+            <label>Department</label>
+            <div class="select-box">
+              <select id="dept" name="dept">
+                <option hidden>Select your department</option>
+                <option>Human Resources</option>
+                <option>Finance</option>
+                <option>Marketing</option>
+                <option>Information Technology</option>
+                <option>Customer Service</option>
+                <option>Administration</option>
+              </select>
+            </div>
+          </div>
+          
+          <div class="input-box">
+            <label>Birth Date</label>
+            <input type="date" id="dob" name="dob" placeholder="Enter birth date"  />
+          </div>
+        </div>
+
+        <div class="input-box gender-box">
+          <h3>Gender</h3>
+          <div id="gender" class="gender-option" name="gender" >
+            <div class="gender">
+              <input type="radio" id="check-male" name="gender" value="Male" />
+              <label for="check-male">Male</label>
+            </div>
+            <div class="gender">
+              <input type="radio" id="check-female" name="gender" value="Female" />
+              <label for="check-female">Female</label>
+            </div>
+            <div class="gender">
+              <input type="radio" id="check-other" name="gender" value="Prefer not to say" />
+              <label for="check-other">Prefer not to say</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="input-box">
+          <label>Designation</label>
+          <input type="text" id="designation" name="designation" placeholder="Enter designation" />
+        </div>
+
+        <div class="input-box">
+          <label>Salary</label>
+          <input type="text" id="salary" name="salary" placeholder="Enter salary amount" />
+        </div>
+        
+        <button type="submit">Next</button>
+      </form>
+    </section>
+    <script src="/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form submitted</title>
+    <style>
+        body{
+            background-color: aliceblue;
+        }
+        .thanks{
+            border: 1px solid #ffffff;
+            background-color: #ffffffd0;
+            border-radius: 6px;
+            text-align: center;
+            margin: auto;
+            width: 60%;
+        }
+        img{
+            height: 50px;
+            border-radius: 25px;
+            width: 50px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body class="submitted-body">
+    <div class="thanks">
+        <h1>Thank you!</h1>
+        <img src="/images/thumbs-up.png" alt="Thumbs Up">
+        <h4>Your response got submitted successfully.</h4>
+    </div>
+    <script>
+        function formatDate(dateString) {
+            const options = { day: '2-digit', month: '2-digit', year: 'numeric' };
+            return new Date(dateString).toLocaleDateString(undefined, options);
+        }
+    </script>
+</body>
+</html>
